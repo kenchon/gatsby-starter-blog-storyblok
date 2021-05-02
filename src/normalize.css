@@ -105,8 +105,9 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  background-color: #eee;
+  color: #333;
+  padding: 0.1em 0.4em;
 }
 
 /**
