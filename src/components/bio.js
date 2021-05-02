@@ -1,57 +1,38 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import SbEditable from "storyblok-react"
+import useStoryblok from "../utils/storyblok-hook"
+import Markdown from "react-markdown"
 
-const Bio = () => {
-  const data = useStaticQuery(graphql`
-    query BioQuery {
-      site {
-        siteMetadata {
-          author {
-            name
-            summary
-          }
-          social {
-            twitter
-          }
-        }
-      }
-    }
-  `)
+const Bio = ({ blok }) => {
+  const story = useStoryblok(blok)
 
-  // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site.siteMetadata?.author
-  const social = data.site.siteMetadata?.social
-
-  return (
-    <div className="bio">
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["AUTO", "WEBP", "AVIF"]}
-        src="../images/profile-pic.png"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />
-      {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
-        </p>
-      )}
-    </div>
+  return !story.content ? (
+    <></>
+  ) : (
+    <SbEditable content={story.content} key={story.content._uid}>
+      <div>
+        {story.content.bio_img && (
+          <img
+            className="bio-avatar"
+            layout="fixed"
+            formats={["AUTO", "WEBP", "AVIF"]}
+            src={story.content.bio_img.filename}
+            width={50}
+            height={50}
+            quality={95}
+            alt={story.content.bio_name}
+          />
+        )}
+        {story.content.bio_name && (
+          <>
+            <p>
+              Written by <strong>{story.content.bio_name}</strong>
+            </p>
+            <Markdown>{story.content.bio_msg}</Markdown>
+          </>
+        )}
+      </div>
+    </SbEditable>
   )
 }
 
