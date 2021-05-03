@@ -9,7 +9,6 @@ export default function useStoryblok(originalStory) {
   // see https://www.storyblok.com/docs/guide/essentials/visual-editor#initializing-the-storyblok-js-bridge
   const initEventListeners = () => {
     if (window.storyblok) {
-      window.storyblok.init()
 
       // reload on Next.js page on save or publish event in the Visual Editor
       window.storyblok.on(["change", "published"], () =>
