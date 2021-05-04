@@ -1,5 +1,7 @@
 # Gatsby Starter Blog Storyblok
 
+![](./docs/title.gif)
+
 This is the example integration of [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) and [Storyblok](https://www.storyblok.com/). I assume you know some [Storyblok basics](https://www.storyblok.com/docs/guide/essentials/content-structures).
 
 ## 0. Prerequisites
