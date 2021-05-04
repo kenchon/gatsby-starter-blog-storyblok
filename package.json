@@ -2,7 +2,7 @@
   "name": "gatsby-starter-blog-storyblok",
   "private": false,
   "description": "A starter for a blog powered by Gatsby and Storyblok",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "author": "Kenya Hondoh",
   "bugs": {
     "url": "https://github.com/kenchon/gatsby-starter-blog-storyblok"
@@ -44,7 +44,7 @@
   },
   "homepage": "https://github.com/kenchon/gatsby-starter-blog-storyblok.git",
   "keywords": [
-    "gatsby"
+    "gatsby", "gatsby-plugin", "storyblok"
   ],
   "license": "0BSD",
   "main": "/src/pages/index.js",
