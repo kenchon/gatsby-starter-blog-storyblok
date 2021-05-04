@@ -1,6 +1,6 @@
 # Gatsby Starter Blog Storyblok
 
-This is the example integration of [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) and [Storyblok](https://www.storyblok.com/).
+This is the example integration of [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) and [Storyblok](https://www.storyblok.com/). I assume you know [Storyblok basics](https://www.storyblok.com/docs/guide/essentials/content-structures).
 
 ## 1. Installation
 
@@ -28,7 +28,7 @@ module.exports = {
     {
       resolve: "gatsby-source-storyblok",
       options: {
-        accessToken: process.env.STORYBLOK_ACCESS_TOKEN, // <- replace this
+        accessToken: process.env.STORYBLOK_ACCESS_TOKEN, // <- set your own
         homeSlug: "home",
         version: process.env.NODE_ENV === "production" ? "published" : "draft",
       },
@@ -40,7 +40,7 @@ module.exports = {
 
 ### 2.2 Define a schema
 
-In this starter, we create following **component**, (content type) and  `field` as described in [Prepared Data Structure](https://www.storyblok.com/docs/guide/getting-started#prepared-data-structure) section.
+In this starter, we create following **component**, (content type) and  `field`. [Prepared Data Structure](https://www.storyblok.com/docs/guide/getting-started#prepared-data-structure) section.
 
 - **/blog** (blogpost)
   - `title`
@@ -56,8 +56,29 @@ In this starter, we create following **component**, (content type) and  `field` 
   - `bio_msg`
   - `bio_name`
 
+Your **Content** looks like this:
+
+![](./docs/contents.png)
+
 > **📖 NOTE**
 > 
-> If your site have multiple author, **bio** should be a folder (rather than an entry) and create bio entry inside the folder.
+> If your site have multiple author, **bio** should be a folder (rather than an entry) and create bio entries inside the folder.
 
 ### 2.3 Create Contents
+
+#### `blogpost`
+
+Go to **/blog** folder and click `+ Entry` to add blogpost.
+
+> **📖 NOTE**
+>
+>Since **/blog** is a folder, `full_slug` property of your new blogpost begin with the prefix `blog/...` (e.g. `blog/my-first-blog`). It is inconvenience when using Visual Editor because this starter repo doesn't use /blog route. To avoid this prefix, install **Advanced Paths** extension from GUI and set `Real Path` = "" at the settings of the **blog** folder.
+![](./docs/advanced-paths.png)
+
+#### `bio`, `settings`
+
+Add contents you like.
+
+## 3. Preview on Visual Editor
+
+`npm run dev` to stert dev server and you can use Visual Editor from Storyblok GUI.
