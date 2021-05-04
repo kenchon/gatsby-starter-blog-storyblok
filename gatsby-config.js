@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: "gatsby-source-storyblok",
       options: {
-        accessToken: "YOUR_STORYBLOK_TOKEN",
+        accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
         homeSlug: "home",
         version: process.env.NODE_ENV === "production" ? "published" : "draft",
       },
