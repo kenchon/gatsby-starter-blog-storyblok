@@ -5,8 +5,8 @@ module.exports = {
       name: `John Doe`,
       summary: ``,
     },
-    description: `A starter blog demonstrating Storyblok integration`,
-    siteUrl: ``,
+    description: `A starter blog demonstrating Storyblok and gatsby-starter-blog`,
+    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
       twitter: ``,
     },
@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: "gatsby-source-storyblok",
       options: {
-        accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
+        accessToken: "YOUR_STORYBLOK_TOKEN",
         homeSlug: "home",
         version: process.env.NODE_ENV === "production" ? "published" : "draft",
       },
