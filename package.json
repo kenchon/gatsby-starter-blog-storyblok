@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "gatsby-starter-blog-storyblok",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "A starter for a blog powered by Gatsby and Storyblok",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Kenya Hondoh",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
@@ -32,6 +32,7 @@
     "react-helmet": "^6.1.0",
     "react-markdown": "^6.0.1",
     "react-syntax-highlighter": "^15.4.3",
+    "storyblok-js-client": "^4.0.7",
     "storyblok-react": "^0.1.2",
     "storyblok-rich-text-react-renderer": "^2.3.1",
     "styled-components": "^5.2.3",
@@ -49,7 +50,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/kenchon/gatsby-starter-blog-storyblok.git"
   },
   "scripts": {
     "build": "gatsby build",
